@@ -36,6 +36,17 @@ public class MainActivity extends AppCompatActivity {
         mTimerText.setText(Integer.toString(minutes)+":"+secondString);
     }
 
+    public void ResetTimer()
+    {
+        mTimerText.setText("00:30");
+        mTimerSeekBar.setProgress(30);
+        mCountDownTimer.cancel();
+        btController.setText("Go");
+        mTimerSeekBar.setEnabled(true);
+        counterisActive = false;
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -94,17 +105,13 @@ public class MainActivity extends AppCompatActivity {
                     mTimerText.setText("0:00");
                     MediaPlayer mMediaPlayer = MediaPlayer.create(getApplication(), R.raw.airhorn);
                     mMediaPlayer.start();
+                    ResetTimer();
                 }
             }.start();
         }
         else
         {
-            mTimerText.setText("00:30");
-            mTimerSeekBar.setProgress(30);
-            mCountDownTimer.cancel();
-            btController.setText("Go");
-            mTimerSeekBar.setEnabled(true);
-            counterisActive = false;
+           ResetTimer();
 
         }
 

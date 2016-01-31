@@ -9,8 +9,42 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.zacck.androideggtimerdemo.MainActivity">
 
+    <SeekBar
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/mEggTimerSeekBar"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:indeterminate="false" />
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/imageView"
+        android:layout_below="@+id/mEggTimerSeekBar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/egg"
+        android:layout_marginTop="15dp" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="00:30"
+        android:id="@+id/tvEggTimer"
+        android:textSize="60sp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="286dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go!"
+        android:id="@+id/btEggTimerController"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/tvEggTimer"
+        android:layout_toEndOf="@+id/tvEggTimer"
+        android:layout_marginBottom="57dp" />
 </RelativeLayout>
